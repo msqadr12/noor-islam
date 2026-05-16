@@ -31,12 +31,10 @@
     overflow-x: hidden;
   }
 
-  /* ===== SCROLLBAR ===== */
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: var(--cream-dark); }
   ::-webkit-scrollbar-thumb { background: var(--green-mid); border-radius: 4px; }
 
-  /* ===== TOP BAR ===== */
   .topbar {
     background: var(--green-dark);
     color: var(--gold-light);
@@ -49,7 +47,6 @@
   }
   .topbar span { margin: 0 15px; }
 
-  /* ===== HEADER ===== */
   header {
     background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 60%, #1b5e3b 100%);
     position: sticky;
@@ -138,7 +135,6 @@
     transition: 0.3s;
   }
 
-  /* ===== HERO ===== */
   .hero {
     position: relative;
     min-height: 600px;
@@ -157,7 +153,6 @@
     pointer-events: none;
   }
 
-  /* Islamic geometric pattern overlay */
   .hero-pattern::before {
     content: '';
     position: absolute;
@@ -247,7 +242,6 @@
     transform: translateY(-3px);
   }
 
-  /* ===== TICKER ===== */
   .ticker-wrap {
     background: var(--gold);
     padding: 10px 0;
@@ -278,7 +272,6 @@
 
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  /* ===== SECTION TITLE ===== */
   .section {
     max-width: 1200px;
     margin: 0 auto;
@@ -313,7 +306,6 @@
     border-radius: 2px;
   }
 
-  /* ===== CARDS ===== */
   .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -378,7 +370,6 @@
   }
   .card-link:hover { gap: 10px; color: var(--green-dark); }
 
-  /* ===== QURAN SECTION ===== */
   .quran-section {
     background: linear-gradient(135deg, var(--green-dark) 0%, #0d2b1e 100%);
     position: relative;
@@ -430,7 +421,6 @@
     font-weight: 600;
   }
 
-  /* ===== SERVICES ===== */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -475,7 +465,6 @@
   }
   .service-item p { color: var(--text-mid); font-size: 0.85rem; line-height: 1.8; }
 
-  /* ===== LATEST NEWS ===== */
   .news-bg { background: #f0ebe0; }
   .news-grid {
     display: grid;
@@ -551,48 +540,6 @@
   .news-small-text h4 { font-size: 0.9rem; color: var(--green-dark); margin-bottom: 4px; line-height: 1.5; }
   .news-small-text span { color: #999; font-size: 0.78rem; }
 
-  /* ===== PRAYER TIMES ===== */
-  .prayer-section {
-    background: linear-gradient(135deg, var(--gold) 0%, #c9a227 100%);
-  }
-  .prayer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
-  }
-  .prayer-title {
-    text-align: center;
-    margin-bottom: 36px;
-  }
-  .prayer-title h2 { font-family: 'Amiri', serif; font-size: 2rem; color: var(--green-dark); }
-  .prayer-title p { color: rgba(26,71,49,0.7); font-size: 0.9rem; margin-top: 6px; }
-  .prayer-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 14px;
-  }
-  .prayer-card {
-    background: rgba(255,255,255,0.9);
-    border-radius: 14px;
-    padding: 20px 10px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s;
-    cursor: pointer;
-  }
-  .prayer-card:hover, .prayer-card.active {
-    background: var(--green-dark);
-    transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(26,71,49,0.3);
-  }
-  .prayer-card:hover h3, .prayer-card.active h3 { color: var(--gold-light); }
-  .prayer-card:hover p, .prayer-card.active p { color: rgba(255,255,255,0.8); }
-  .prayer-card:hover .prayer-emoji, .prayer-card.active .prayer-emoji { filter: brightness(2); }
-  .prayer-emoji { font-size: 1.8rem; margin-bottom: 8px; }
-  .prayer-card h3 { color: var(--green-dark); font-family: 'Amiri', serif; font-size: 1rem; margin-bottom: 4px; }
-  .prayer-card p { color: var(--text-mid); font-size: 0.85rem; font-weight: 600; }
-
-  /* ===== COUNTER ===== */
   .counter-section {
     background: var(--green-dark);
     padding: 60px 20px;
@@ -615,7 +562,6 @@
   }
   .counter-label { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-top: 4px; }
 
-  /* ===== FOOTER ===== */
   footer {
     background: #0d1f16;
     color: rgba(255,255,255,0.75);
@@ -686,7 +632,6 @@
     color: rgba(255,255,255,0.4);
   }
 
-  /* ===== MOBILE NAV ===== */
   .mobile-menu {
     display: none;
     flex-direction: column;
@@ -706,7 +651,6 @@
   }
   .mobile-menu a:hover { background: rgba(212,175,55,0.15); color: var(--gold-light); }
 
-  /* ===== ANIMATIONS ===== */
   @keyframes fadeDown {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -723,17 +667,14 @@
   }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-  /* ===== RESPONSIVE ===== */
   @media (max-width: 900px) {
     nav { display: none; }
     .hamburger { display: flex; }
     .news-grid { grid-template-columns: 1fr; }
-    .prayer-grid { grid-template-columns: repeat(3, 1fr); }
     .counter-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 600px) {
-    .prayer-grid { grid-template-columns: repeat(2, 1fr); }
     .counter-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; text-align: center; }
@@ -874,48 +815,6 @@
     </div>
     <div style="margin-top:30px;">
       <button class="btn-primary" onclick="changeAyat()">اگلی آیت ←</button>
-    </div>
-  </div>
-</section>
-
-<!-- PRAYER TIMES -->
-<section class="prayer-section">
-  <div class="prayer-inner">
-    <div class="prayer-title">
-      <h2>⏰ نماز کے اوقات</h2>
-      <p>آج کی تاریخ: <span id="todayDate"></span> — کراچی، پاکستان</p>
-    </div>
-    <div class="prayer-grid">
-      <div class="prayer-card">
-        <div class="prayer-emoji">🌙</div>
-        <h3>فجر</h3>
-        <p>5:12 AM</p>
-      </div>
-      <div class="prayer-card">
-        <div class="prayer-emoji">🌅</div>
-        <h3>اشراق</h3>
-        <p>6:45 AM</p>
-      </div>
-      <div class="prayer-card active">
-        <div class="prayer-emoji">☀️</div>
-        <h3>ظہر</h3>
-        <p>12:30 PM</p>
-      </div>
-      <div class="prayer-card">
-        <div class="prayer-emoji">🌤️</div>
-        <h3>عصر</h3>
-        <p>4:15 PM</p>
-      </div>
-      <div class="prayer-card">
-        <div class="prayer-emoji">🌇</div>
-        <h3>مغرب</h3>
-        <p>7:02 PM</p>
-      </div>
-      <div class="prayer-card">
-        <div class="prayer-emoji">🌃</div>
-        <h3>عشاء</h3>
-        <p>8:30 PM</p>
-      </div>
     </div>
   </div>
 </section>
@@ -1073,7 +972,7 @@
     <div class="footer-col">
       <h4>رابطہ</h4>
       <ul>
-        <li><a href="#">📍 'نرگاں سیتا مڑھی بہار   </a></li>
+        <li><a href="#">📍 نرگاں سیتا مڑھی بہار</a></li>
         <li><a href="#">📞 9523940669</a></li>
         <li><a href="#">📧 info@noorislam.pk</a></li>
         <li><a href="#">🕐 پیر تا جمعہ: 9am-6pm</a></li>
@@ -1088,18 +987,15 @@
 </footer>
 
 <script>
-// Mobile Menu
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
   menu.classList.toggle('open');
 }
 
-// Today's Date in Urdu
 const months = ['جنوری','فروری','مارچ','اپریل','مئی','جون','جولائی','اگست','ستمبر','اکتوبر','نومبر','دسمبر'];
 const d = new Date();
-document.getElementById('todayDate').textContent = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+document.getElementById('todayDate') && (document.getElementById('todayDate').textContent = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`);
 
-// Quran Ayat rotation
 const ayat = [
   { arabic: 'وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا', translation: 'اور اللہ کی رسی کو مضبوطی سے تھام لو اور آپس میں تفرقہ نہ ڈالو', ref: 'سورۃ آل عمران – آیت ۱۰۳' },
   { arabic: 'إِنَّ مَعَ الْعُسْرِ يُسْرًا', translation: 'بے شک تکلیف کے ساتھ آسانی ہے', ref: 'سورۃ الشرح – آیت ۶' },
@@ -1121,13 +1017,11 @@ function changeAyat() {
   }, 300);
 }
 
-// Scroll Fade-In
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.15 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// Counter Animation
 function animateCounter(el) {
   const target = +el.getAttribute('data-target');
   const duration = 2000;

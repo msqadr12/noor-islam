@@ -1,1047 +1,170 @@
-<!DOCTYPE html>
-<html lang="ur" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>نور اسلام - اسلامی تعلیمات کا مرکز</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --green-dark: #1a4731;
-    --green-mid: #2d6a4f;
-    --green-light: #52b788;
-    --gold: #d4af37;
-    --gold-light: #f0d060;
-    --cream: #fdf6e3;
-    --cream-dark: #f5e6c0;
-    --white: #ffffff;
-    --text-dark: #1a1a1a;
-    --text-mid: #3a3a3a;
-    --shadow: rgba(0,0,0,0.15);
-  }
+```html
+<!-- PREMIUM ISLAMIC ARTICLES SECTION -->
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+<section class="section fade-in">
 
-  body {
-    font-family: 'Noto Nastaliq Urdu', 'Amiri', serif;
-    background: var(--cream);
-    color: var(--text-dark);
-    direction: rtl;
-    overflow-x: hidden;
-  }
-
-  ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: var(--cream-dark); }
-  ::-webkit-scrollbar-thumb { background: var(--green-mid); border-radius: 4px; }
-
-  .topbar {
-    background: var(--green-dark);
-    color: var(--gold-light);
-    text-align: center;
-    padding: 8px 20px;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    border-bottom: 2px solid var(--gold);
-    animation: fadeDown 0.5s ease;
-  }
-  .topbar span { margin: 0 15px; }
-
-  header {
-    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 60%, #1b5e3b 100%);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  }
-
-  .header-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    text-decoration: none;
-  }
-
-  .logo-icon {
-    width: 58px;
-    height: 58px;
-    background: var(--gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    box-shadow: 0 0 0 4px rgba(212,175,55,0.3);
-    animation: pulse 3s infinite;
-  }
-
-  .logo-text h1 {
-    color: var(--gold-light);
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 1.2;
-    font-family: 'Amiri', serif;
-  }
-  .logo-text p { color: rgba(255,255,255,0.7); font-size: 0.75rem; }
-
-  nav { display: flex; align-items: center; gap: 6px; }
-  nav a {
-    color: var(--cream);
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-    position: relative;
-  }
-  nav a:hover, nav a.active {
-    background: rgba(212,175,55,0.2);
-    color: var(--gold-light);
-  }
-  nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    right: 14px;
-    left: 14px;
-    height: 2px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transition: transform 0.3s;
-  }
-  nav a:hover::after { transform: scaleX(1); }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 5px;
-  }
-  .hamburger span {
-    width: 25px; height: 3px;
-    background: var(--gold-light);
-    border-radius: 3px;
-    transition: 0.3s;
-  }
-
-  .hero {
-    position: relative;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    background: linear-gradient(160deg, #0d2b1e 0%, #1a4731 40%, #2d6a4f 100%);
-  }
-
-  .hero-pattern {
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(circle at 20% 50%, rgba(212,175,55,0.08) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(82,183,136,0.1) 0%, transparent 40%);
-    pointer-events: none;
-  }
-
-  .hero-pattern::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='0.4' opacity='0.15'%3E%3Cpolygon points='30,5 55,20 55,40 30,55 5,40 5,20'/%3E%3Cpolygon points='30,12 48,22 48,38 30,48 12,38 12,22'/%3E%3C/g%3E%3C/svg%3E");
-    background-size: 60px 60px;
-  }
-
-  .hero-content {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px;
-    text-align: center;
-    z-index: 2;
-    width: 100%;
-  }
-
-  .bismillah {
-    font-family: 'Amiri', serif;
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    color: var(--gold);
-    margin-bottom: 20px;
-    animation: fadeDown 0.8s ease 0.2s both;
-    text-shadow: 0 2px 10px rgba(212,175,55,0.3);
-  }
-
-  .hero h2 {
-    font-family: 'Amiri', serif;
-    font-size: clamp(1.4rem, 3.5vw, 2.4rem);
-    color: var(--white);
-    margin-bottom: 16px;
-    animation: fadeDown 0.8s ease 0.4s both;
-    line-height: 1.6;
-  }
-
-  .hero p {
-    color: rgba(255,255,255,0.75);
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    max-width: 680px;
-    margin: 0 auto 36px;
-    line-height: 2;
-    animation: fadeDown 0.8s ease 0.6s both;
-  }
-
-  .hero-btns {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    flex-wrap: wrap;
-    animation: fadeDown 0.8s ease 0.8s both;
-  }
-
-  .btn-primary {
-    background: linear-gradient(135deg, var(--gold), #b8962e);
-    color: var(--green-dark);
-    padding: 14px 32px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
-    box-shadow: 0 4px 20px rgba(212,175,55,0.4);
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-  }
-  .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(212,175,55,0.5);
-  }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--gold-light);
-    padding: 13px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    border: 2px solid var(--gold);
-    transition: all 0.3s;
-    display: inline-block;
-  }
-  .btn-outline:hover {
-    background: rgba(212,175,55,0.15);
-    transform: translateY(-3px);
-  }
-
-  .ticker-wrap {
-    background: var(--gold);
-    padding: 10px 0;
-    overflow: hidden;
-    position: relative;
-  }
-  .ticker-wrap::before, .ticker-wrap::after {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 80px;
-    z-index: 2;
-  }
-  .ticker-wrap::before { right: 0; background: linear-gradient(to left, var(--gold), transparent); }
-  .ticker-wrap::after { left: 0; background: linear-gradient(to right, var(--gold), transparent); }
-  .ticker {
-    display: flex;
-    gap: 60px;
-    animation: ticker 30s linear infinite;
-    white-space: nowrap;
-  }
-  .ticker span {
-    color: var(--green-dark);
-    font-weight: 700;
-    font-size: 0.9rem;
-  }
-  .ticker span::before { content: '✦ '; color: var(--green-dark); }
-
-  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-  .section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 70px 20px;
-  }
-
-  .section-title {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  .section-title .label {
-    display: inline-block;
-    background: rgba(45,106,79,0.1);
-    color: var(--green-mid);
-    padding: 5px 18px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    margin-bottom: 10px;
-    border: 1px solid rgba(45,106,79,0.2);
-  }
-  .section-title h2 {
-    font-family: 'Amiri', serif;
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    color: var(--green-dark);
-    margin-bottom: 12px;
-  }
-  .section-title .divider {
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(to right, var(--gold), var(--green-light));
-    margin: 0 auto;
-    border-radius: 2px;
-  }
-
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-  }
-
-  .card {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px var(--shadow);
-    transition: all 0.4s;
-    border: 1px solid rgba(212,175,55,0.15);
-  }
-  .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.15);
-    border-color: var(--gold);
-  }
-
-  .card-header {
-    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
-    padding: 24px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .card-header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='15' fill='none' stroke='%23d4af37' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E");
-    background-size: 40px 40px;
-  }
-  .card-icon {
-    font-size: 2.5rem;
-    position: relative;
-    z-index: 1;
-  }
-  .card-body { padding: 24px; }
-  .card-body h3 {
-    font-family: 'Amiri', serif;
-    font-size: 1.2rem;
-    color: var(--green-dark);
-    margin-bottom: 10px;
-  }
-  .card-body p {
-    color: var(--text-mid);
-    font-size: 0.9rem;
-    line-height: 2;
-  }
-  .card-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--green-mid);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-top: 14px;
-    transition: gap 0.3s;
-  }
-  .card-link:hover { gap: 10px; color: var(--green-dark); }
-
-  .quran-section {
-    background: linear-gradient(135deg, var(--green-dark) 0%, #0d2b1e 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .quran-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 5 L75 25 L75 55 L40 75 L5 55 L5 25 Z' fill='none' stroke='%23d4af37' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E");
-    background-size: 80px 80px;
-  }
-  .quran-inner {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px;
-    text-align: center;
-  }
-  .ayat-box {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(212,175,55,0.3);
-    border-radius: 20px;
-    padding: 50px 40px;
-    max-width: 800px;
-    margin: 0 auto;
-    backdrop-filter: blur(10px);
-  }
-  .arabic-text {
-    font-family: 'Amiri', serif;
-    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
-    color: var(--gold-light);
-    line-height: 2;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 8px rgba(212,175,55,0.2);
-  }
-  .translation {
-    color: rgba(255,255,255,0.8);
-    font-size: 1rem;
-    line-height: 2;
-    border-top: 1px solid rgba(212,175,55,0.2);
-    padding-top: 20px;
-    margin-top: 10px;
-  }
-  .surah-ref {
-    color: var(--gold);
-    font-size: 0.9rem;
-    margin-top: 12px;
-    font-weight: 600;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-  }
-  .service-item {
-    text-align: center;
-    padding: 36px 20px;
-    background: var(--white);
-    border-radius: 16px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 2px 15px var(--shadow);
-  }
-  .service-item:hover {
-    border-color: var(--gold);
-    transform: translateY(-6px);
-    box-shadow: 0 12px 35px rgba(212,175,55,0.2);
-  }
-  .service-icon {
-    width: 70px; height: 70px;
-    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    margin: 0 auto 16px;
-    box-shadow: 0 4px 15px rgba(26,71,49,0.3);
-    transition: all 0.3s;
-  }
-  .service-item:hover .service-icon {
-    background: linear-gradient(135deg, var(--gold), #b8962e);
-    box-shadow: 0 4px 20px rgba(212,175,55,0.4);
-  }
-  .service-item h3 {
-    font-family: 'Amiri', serif;
-    font-size: 1.1rem;
-    color: var(--green-dark);
-    margin-bottom: 8px;
-  }
-  .service-item p { color: var(--text-mid); font-size: 0.85rem; line-height: 1.8; }
-
-  .news-bg { background: #f0ebe0; }
-  .news-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-  }
-  .news-main .news-card {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px var(--shadow);
-  }
-  .news-img {
-    height: 240px;
-    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .news-img::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='30,5 55,20 55,40 30,55 5,40 5,20' fill='none' stroke='%23d4af37' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E");
-    background-size: 60px 60px;
-  }
-  .news-content { padding: 24px; }
-  .news-tag {
-    display: inline-block;
-    background: rgba(45,106,79,0.1);
-    color: var(--green-mid);
-    padding: 3px 12px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-  }
-  .news-content h3 {
-    font-family: 'Amiri', serif;
-    font-size: 1.3rem;
-    color: var(--green-dark);
-    margin-bottom: 10px;
-    line-height: 1.6;
-  }
-  .news-content p { color: var(--text-mid); font-size: 0.9rem; line-height: 2; }
-  .news-meta { color: #999; font-size: 0.8rem; margin-top: 12px; }
-
-  .news-sidebar { display: flex; flex-direction: column; gap: 16px; }
-  .news-small {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 10px var(--shadow);
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    transition: all 0.3s;
-    cursor: pointer;
-  }
-  .news-small:hover { transform: translateX(-5px); box-shadow: 0 6px 20px var(--shadow); }
-  .news-small-icon {
-    width: 50px; height: 50px;
-    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-  }
-  .news-small-text h4 { font-size: 0.9rem; color: var(--green-dark); margin-bottom: 4px; line-height: 1.5; }
-  .news-small-text span { color: #999; font-size: 0.78rem; }
-
-  .counter-section {
-    background: var(--green-dark);
-    padding: 60px 20px;
-  }
-  .counter-grid {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    text-align: center;
-  }
-  .counter-item { padding: 10px; }
-  .counter-num {
-    font-family: 'Amiri', serif;
-    font-size: 2.8rem;
-    color: var(--gold);
-    font-weight: 700;
-    display: block;
-  }
-  .counter-label { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-top: 4px; }
-
-  footer {
-    background: #0d1f16;
-    color: rgba(255,255,255,0.75);
-    padding: 60px 20px 30px;
-  }
-  .footer-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
-  }
-  .footer-about .logo-text h1 { font-size: 1.4rem; margin-bottom: 12px; display: block; }
-  .footer-about p { font-size: 0.88rem; line-height: 2; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
-  .social-links { display: flex; gap: 10px; flex-wrap: wrap; }
-  .social-link {
-    width: 38px; height: 38px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(212,175,55,0.2);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    transition: all 0.3s;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .social-link:hover {
-    background: var(--gold);
-    border-color: var(--gold);
-    transform: translateY(-3px);
-  }
-  .footer-col h4 {
-    color: var(--gold);
-    font-family: 'Amiri', serif;
-    font-size: 1.1rem;
-    margin-bottom: 18px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(212,175,55,0.2);
-  }
-  .footer-col ul { list-style: none; }
-  .footer-col li { margin-bottom: 10px; }
-  .footer-col a {
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    font-size: 0.88rem;
-    transition: color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .footer-col a::before { content: '›'; color: var(--gold); }
-  .footer-col a:hover { color: var(--gold-light); }
-
-  .footer-bottom {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: gap;
-    gap: 14px;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.4);
-  }
-
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    background: var(--green-dark);
-    padding: 16px 20px;
-    gap: 4px;
-    border-top: 1px solid rgba(212,175,55,0.2);
-  }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    color: var(--cream);
-    text-decoration: none;
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    transition: all 0.2s;
-  }
-  .mobile-menu a:hover { background: rgba(212,175,55,0.15); color: var(--gold-light); }
-
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 4px rgba(212,175,55,0.3); }
-    50% { box-shadow: 0 0 0 10px rgba(212,175,55,0.05); }
-  }
-
-  .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-  @media (max-width: 900px) {
-    nav { display: none; }
-    .hamburger { display: flex; }
-    .news-grid { grid-template-columns: 1fr; }
-    .counter-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 600px) {
-    .counter-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-grid { grid-template-columns: 1fr; }
-    .footer-bottom { flex-direction: column; text-align: center; }
-    .ayat-box { padding: 30px 20px; }
-  }
-</style>
-</head>
-<body>
-
-<!-- TOP BAR -->
-<div class="topbar">
-  <span>☪️ بسم اللہ الرحمٰن الرحیم</span>
-  <span>📞 ہیلپ لائن: 9523940669</span>
-  <span>📧 mdshaukatali826@gmail.com</span>
+<div class="section-title">
+<span class="label">اسلامی مضامین</span>
+<h2>نورِ اسلام علمی و روحانی مضامین</h2>
+<div class="divider"></div>
 </div>
 
-<!-- HEADER -->
-<header>
-  <div class="header-inner">
-    <a href="#" class="logo">
-      <div class="logo-icon">☪️</div>
-      <div class="logo-text">
-        <h1>نور اسلام</h1>
-        <p>اسلامی تعلیمات کا مرکز</p>
-      </div>
-    </a>
-    <nav>
-      <a href="#" class="active">صفحہ اول</a>
-      <a href="#">قرآن و حدیث</a>
-      <a href="#">دروس</a>
-      <a href="#">خدمات</a>
-      <a href="#">اشاعت</a>
-      <a href="#">ہم سے رابطہ</a>
-    </nav>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#">صفحہ اول</a>
-    <a href="#">قرآن و حدیث</a>
-    <a href="#">دروس</a>
-    <a href="#">خدمات</a>
-    <a href="#">اشاعت</a>
-    <a href="#">ہم سے رابطہ</a>
-  </div>
-</header>
+<div class="cards-grid">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-pattern"></div>
-  <div class="hero-content">
-    <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِیْمِ</div>
-    <h2>اسلام کی روشنی سے اپنی زندگی روشن کریں</h2>
-    <p>قرآن و سنت کی تعلیمات، دینی دروس، اور اسلامی خدمات کے ساتھ آپ کا خیرمقدم ہے</p>
-    <div class="hero-btns">
-      <a href="#" class="btn-primary">دروس شروع کریں</a>
-      <a href="#" class="btn-outline">مزید جانیں ←</a>
-    </div>
-  </div>
-</section>
+<!-- CARD 1 -->
 
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker" id="ticker">
-    <span>نماز پنجگانہ کی پابندی کریں</span>
-    <span>قرآن پاک تلاوت کا معمول بنائیں</span>
-    <span>رمضان المبارک کی خیر مبارک</span>
-    <span>اسلامی تعلیمات پھیلانا ثواب ہے</span>
-    <span>دروس و لیکچرز مفت دستیاب ہیں</span>
-    <span>نئی کتب ڈاؤنلوڈ کریں</span>
-    <span>نماز پنجگانہ کی پابندی کریں</span>
-    <span>قرآن پاک تلاوت کا معمول بنائیں</span>
-    <span>رمضان المبارک کی خیر مبارک</span>
-    <span>اسلامی تعلیمات پھیلانا ثواب ہے</span>
-    <span>دروس و لیکچرز مفت دستیاب ہیں</span>
-    <span>نئی کتب ڈاؤنلوڈ کریں</span>
-  </div>
+<div class="card">
+<div class="card-header">
+<div class="card-icon">🕌</div>
 </div>
 
-<!-- SERVICES -->
-<section class="section fade-in">
-  <div class="section-title">
-    <span class="label">ہماری خدمات</span>
-    <h2>آپ کی دینی ضروریات کے لیے</h2>
-    <div class="divider"></div>
-  </div>
-  <div class="services-grid">
-    <div class="service-item">
-      <div class="service-icon">📖</div>
-      <h3>قرآن مجید</h3>
-      <p>قرآن پاک کی تلاوت، ترجمہ اور تفسیر آن لائن سیکھیں</p>
-    </div>
-    <div class="service-item">
-      <div class="service-icon">🕌</div>
-      <h3>نماز کے اوقات</h3>
-      <p>اپنے شہر کے مطابق نماز کے اوقات جانیں</p>
-    </div>
-    <div class="service-item">
-      <div class="service-icon">📚</div>
-      <h3>دینی دروس</h3>
-      <p>علماء کرام کے دروس اور بیانات سنیں</p>
-    </div>
-    <div class="service-item">
-      <div class="service-icon">📿</div>
-      <h3>اسلامی کتب</h3>
-      <p>ہزاروں اسلامی کتابیں مفت ڈاؤنلوڈ کریں</p>
-    </div>
-    <div class="service-item">
-      <div class="service-icon">🤲</div>
-      <h3>دعائیں و اذکار</h3>
-      <p>روزمرہ کی دعائیں اور اذکار سیکھیں</p>
-    </div>
-    <div class="service-item">
-      <div class="service-icon">❓</div>
-      <h3>اسلامی سوال جواب</h3>
-      <p>دینی مسائل کے بارے میں سوال پوچھیں</p>
-    </div>
-  </div>
+<div class="card-body">
+
+<h3>نماز کی اہمیت</h3>
+
+<p>
+نماز اسلام کا عظیم ستون ہے۔
+نماز دل کو سکون، روح کو پاکیزگی
+اور زندگی کو نور عطا کرتی ہے۔
+جو شخص نماز کی پابندی کرتا ہے
+اللہ تعالیٰ اُس کے رزق اور زندگی میں برکت عطا فرماتا ہے۔
+</p>
+
+<a href="#" class="card-link">
+مکمل مضمون پڑھیں ←
+</a>
+
+</div>
+</div>
+
+<!-- CARD 2 -->
+
+<div class="card">
+<div class="card-header">
+<div class="card-icon">📖</div>
+</div>
+
+<div class="card-body">
+
+<h3>قرآن مجید کی عظمت</h3>
+
+<p>
+قرآن پاک اللہ تعالیٰ کی آخری کتاب ہے۔
+یہ انسانیت کیلئے ہدایت،
+رحمت اور کامیابی کا ذریعہ ہے۔
+جو قرآن سے محبت کرتا ہے
+اللہ تعالیٰ اُس کے دل کو روشن فرما دیتا ہے۔
+</p>
+
+<a href="#" class="card-link">
+مزید پڑھیں ←
+</a>
+
+</div>
+</div>
+
+<!-- CARD 3 -->
+
+<div class="card">
+<div class="card-header">
+<div class="card-icon">🤲</div>
+</div>
+
+<div class="card-body">
+
+<h3>دعا کی فضیلت</h3>
+
+<p>
+دعا مومن کا سب سے بڑا سہارا ہے۔
+اللہ تعالیٰ اپنے بندوں کی ہر پکار سنتا ہے۔
+سچی دعا انسان کی تقدیر بدل سکتی ہے
+اور مشکلات کو آسان بنا دیتی ہے۔
+</p>
+
+<a href="#" class="card-link">
+مکمل بیان ←
+</a>
+
+</div>
+</div>
+
+<!-- CARD 4 -->
+
+<div class="card">
+<div class="card-header">
+<div class="card-icon">🌙</div>
+</div>
+
+<div class="card-body">
+
+<h3>رمضان المبارک</h3>
+
+<p>
+رمضان رحمتوں، برکتوں
+اور مغفرت کا مہینہ ہے۔
+اس مہینے میں عبادت کا ثواب
+کئی گنا بڑھا دیا جاتا ہے۔
+</p>
+
+<a href="#" class="card-link">
+تفصیل پڑھیں ←
+</a>
+
+</div>
+</div>
+
+<!-- CARD 5 -->
+
+<div class="card">
+<div class="card-header">
+<div class="card-icon">📿</div>
+</div>
+
+<div class="card-body">
+
+<h3>ذکرِ الٰہی</h3>
+
+<p>
+اللہ تعالیٰ کا ذکر دلوں کو سکون دیتا ہے۔
+ذکر کرنے والا شخص
+دنیا و آخرت میں کامیابی حاصل کرتا ہے۔
+ہر وقت اللہ کو یاد رکھنا
+مومن کی شان ہے۔
+</p>
+
+<a href="#" class="card-link">
+مزید جانیں ←
+</a>
+
+</div>
+</div>
+
+<!-- CARD 6 -->
+
+<div class="card">
+<div class="card-header">
+<div class="card-icon">☪️</div>
+</div>
+
+<div class="card-body">
+
+<h3>سیرتِ مصطفی ﷺ</h3>
+
+<p>
+حضور نبی کریم ﷺ کی مبارک زندگی
+تمام انسانیت کیلئے بہترین نمونہ ہے۔
+آپ ﷺ کی سیرت میں
+محبت، رحمت اور اخلاق کا عظیم درس موجود ہے۔
+</p>
+
+<a href="#" class="card-link">
+سیرت پڑھیں ←
+</a>
+
+</div>
+</div>
+
+</div>
+
 </section>
-
-<!-- QURAN SECTION -->
-<section class="quran-section">
-  <div class="quran-inner fade-in">
-    <div class="section-title">
-      <span class="label" style="background:rgba(212,175,55,0.15);color:var(--gold);border-color:rgba(212,175,55,0.3);">آیت کریمہ</span>
-      <h2 style="color:var(--white);">آج کی آیت</h2>
-      <div class="divider" style="background:linear-gradient(to right, var(--gold), var(--green-light))"></div>
-    </div>
-    <div class="ayat-box" id="ayatBox">
-      <div class="arabic-text" id="arabicText">
-        وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا
-      </div>
-      <div class="translation" id="translationText">
-        اور اللہ کی رسی کو مضبوطی سے تھام لو اور آپس میں تفرقہ نہ ڈالو
-      </div>
-      <div class="surah-ref" id="surahRef">سورۃ آل عمران – آیت ۱۰۳</div>
-    </div>
-    <div style="margin-top:30px;">
-      <button class="btn-primary" onclick="changeAyat()">اگلی آیت ←</button>
-    </div>
-  </div>
-</section>
-
-<!-- LATEST NEWS -->
-<section class="news-bg">
-  <div class="section fade-in">
-    <div class="section-title">
-      <span class="label">تازہ خبریں</span>
-      <h2>اسلامی اخبار و اطلاعات</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="news-grid">
-      <div class="news-main">
-        <div class="news-card">
-          <div class="news-img">🕌</div>
-          <div class="news-content">
-            <span class="news-tag">اہم خبر</span>
-            <h3>عالمی اسلامی کانفرنس میں علماء کرام کا اتحاد پر زور</h3>
-            <p>دنیا بھر سے آئے ہوئے علماء کرام نے مسلمانوں میں اتحاد و یکجہتی کی ضرورت پر روشنی ڈالی اور قرآن و سنت کی تعلیمات پر عمل کرنے کی تلقین کی۔</p>
-            <div class="news-meta">📅 ۱۶ مئی ۲۰۲۶ | ✍️ ادارہ نور اسلام</div>
-            <a href="#" class="card-link">مکمل پڑھیں ←</a>
-          </div>
-        </div>
-      </div>
-      <div class="news-sidebar">
-        <div class="news-small">
-          <div class="news-small-icon">📖</div>
-          <div class="news-small-text">
-            <h4>رمضان کے بعد تلاوت کا معمول جاری رکھیں</h4>
-            <span>📅 ۱۵ مئی ۲۰۲۶</span>
-          </div>
-        </div>
-        <div class="news-small">
-          <div class="news-small-icon">🤲</div>
-          <div class="news-small-text">
-            <h4>جمعۃ الوداع کے بعد دینی سرگرمیاں</h4>
-            <span>📅 ۱۴ مئی ۲۰۲۶</span>
-          </div>
-        </div>
-        <div class="news-small">
-          <div class="news-small-icon">📚</div>
-          <div class="news-small-text">
-            <h4>نئی اسلامی کتب کا اجراء</h4>
-            <span>📅 ۱۳ مئی ۲۰۲۶</span>
-          </div>
-        </div>
-        <div class="news-small">
-          <div class="news-small-icon">🕌</div>
-          <div class="news-small-text">
-            <h4>مساجد میں بچوں کی قرآن کلاسیں</h4>
-            <span>📅 ۱۲ مئی ۲۰۲۶</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MAIN FEATURE CARDS -->
-<section class="section fade-in">
-  <div class="section-title">
-    <span class="label">دینی علوم</span>
-    <h2>تعلیمات اسلام</h2>
-    <div class="divider"></div>
-  </div>
-  <div class="cards-grid">
-    <div class="card">
-      <div class="card-header"><div class="card-icon">📖</div></div>
-      <div class="card-body">
-        <h3>قرآن تفسیر</h3>
-        <p>قرآن مجید کی مشہور تفاسیر جیسے تفسیر ابن کثیر، تفسیر جلالین آن لائن پڑھیں اور سمجھیں۔</p>
-        <a href="#" class="card-link">تفسیر پڑھیں ←</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header"><div class="card-icon">📿</div></div>
-      <div class="card-body">
-        <h3>احادیث مبارکہ</h3>
-        <p>صحیح بخاری، صحیح مسلم اور دیگر کتب احادیث سے رہنمائی حاصل کریں۔</p>
-        <a href="#" class="card-link">احادیث پڑھیں ←</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header"><div class="card-icon">🎙️</div></div>
-      <div class="card-body">
-        <h3>اسلامی بیانات</h3>
-        <p>مشہور علماء کرام کے دروس اور بیانات آڈیو اور ویڈیو فارمیٹ میں سنیں۔</p>
-        <a href="#" class="card-link">بیانات سنیں ←</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COUNTER -->
-<section class="counter-section fade-in">
-  <div class="counter-grid">
-    <div class="counter-item">
-      <span class="counter-num" data-target="50000">0</span>
-      <div class="counter-label">اراکین</div>
-    </div>
-    <div class="counter-item">
-      <span class="counter-num" data-target="5000">0</span>
-      <div class="counter-label">اسلامی کتب</div>
-    </div>
-    <div class="counter-item">
-      <span class="counter-num" data-target="1200">0</span>
-      <div class="counter-label">دروس و بیانات</div>
-    </div>
-    <div class="counter-item">
-      <span class="counter-num" data-target="300">0</span>
-      <div class="counter-label">علماء کرام</div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-about">
-      <div class="logo-text">
-        <h1 style="color:var(--gold);font-family:'Amiri',serif;display:block;margin-bottom:12px;">نور اسلام</h1>
-      </div>
-      <p>نور اسلام ایک اسلامی تعلیمات کا آن لائن مرکز ہے جہاں قرآن و سنت کی روشنی میں دینی رہنمائی فراہم کی جاتی ہے۔ ہمارا مقصد اسلامی تعلیمات کو عام کرنا ہے۔</p>
-      <div class="social-links">
-        <a class="social-link" href="#">📘</a>
-        <a class="social-link" href="#">📸</a>
-        <a class="social-link" href="#">🎵</a>
-        <a class="social-link" href="#">▶️</a>
-        <a class="social-link" href="#">🐦</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>اہم روابط</h4>
-      <ul>
-        <li><a href="#">صفحہ اول</a></li>
-        <li><a href="#">ہمارے بارے میں</a></li>
-        <li><a href="#">خدمات</a></li>
-        <li><a href="#">دروس</a></li>
-        <li><a href="#">کتب خانہ</a></li>
-        <li><a href="#">رابطہ کریں</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>دینی موضوعات</h4>
-      <ul>
-        <li><a href="#">عقیدہ</a></li>
-        <li><a href="#">فقہ</a></li>
-        <li><a href="#">سیرت النبی ﷺ</a></li>
-        <li><a href="#">تاریخ اسلام</a></li>
-        <li><a href="#">اخلاقیات</a></li>
-        <li><a href="#">خاندانی نظام</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>رابطہ</h4>
-      <ul>
-        <li><a href="#">📍 نرگاں سیتا مڑھی بہار</a></li>
-        <li><a href="#">📞 9523940669</a></li>
-        <li><a href="#">📧 info@noorislam.pk</a></li>
-        <li><a href="#">🕐 پیر تا جمعہ: 9am-6pm</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 نور اسلام۔ تمام حقوق محفوظ ہیں</span>
-    <span style="color:var(--gold);font-family:'Amiri',serif;">اَللّٰهُمَّ صَلِّ عَلٰی مُحَمَّد ﷺ</span>
-    <span>پرائیویسی پالیسی | شرائط و ضوابط</span>
-  </div>
-</footer>
-
-<script>
-function toggleMenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.classList.toggle('open');
-}
-
-const months = ['جنوری','فروری','مارچ','اپریل','مئی','جون','جولائی','اگست','ستمبر','اکتوبر','نومبر','دسمبر'];
-const d = new Date();
-document.getElementById('todayDate') && (document.getElementById('todayDate').textContent = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`);
-
-const ayat = [
-  { arabic: 'وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا', translation: 'اور اللہ کی رسی کو مضبوطی سے تھام لو اور آپس میں تفرقہ نہ ڈالو', ref: 'سورۃ آل عمران – آیت ۱۰۳' },
-  { arabic: 'إِنَّ مَعَ الْعُسْرِ يُسْرًا', translation: 'بے شک تکلیف کے ساتھ آسانی ہے', ref: 'سورۃ الشرح – آیت ۶' },
-  { arabic: 'وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا', translation: 'اور جو اللہ سے ڈرے، اللہ اس کے لیے نکلنے کی راہ نکال دیتا ہے', ref: 'سورۃ الطلاق – آیت ۲' },
-  { arabic: 'فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا', translation: 'پس بے شک تکلیف کے ساتھ آسانی ہے، یقیناً تکلیف کے ساتھ آسانی ہے', ref: 'سورۃ الشرح – آیت ۵-۶' },
-  { arabic: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ', translation: 'ہمیں اللہ کافی ہے اور وہ بہترین کارساز ہے', ref: 'سورۃ آل عمران – آیت ۱۷۳' },
-];
-let ayatIndex = 0;
-function changeAyat() {
-  ayatIndex = (ayatIndex + 1) % ayat.length;
-  const box = document.getElementById('ayatBox');
-  box.style.opacity = '0';
-  setTimeout(() => {
-    document.getElementById('arabicText').textContent = ayat[ayatIndex].arabic;
-    document.getElementById('translationText').textContent = ayat[ayatIndex].translation;
-    document.getElementById('surahRef').textContent = ayat[ayatIndex].ref;
-    box.style.transition = 'opacity 0.5s';
-    box.style.opacity = '1';
-  }, 300);
-}
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.15 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-function animateCounter(el) {
-  const target = +el.getAttribute('data-target');
-  const duration = 2000;
-  const step = target / (duration / 16);
-  let current = 0;
-  const timer = setInterval(() => {
-    current += step;
-    if (current >= target) { current = target; clearInterval(timer); }
-    el.textContent = Math.floor(current).toLocaleString('en') + '+';
-  }, 16);
-}
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.counter-num').forEach(animateCounter);
-      counterObserver.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.3 });
-document.querySelector('.counter-section') && counterObserver.observe(document.querySelector('.counter-section'));
-</script>
-</body> 
-
+```
